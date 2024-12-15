@@ -1,4 +1,3 @@
-# README: Data Model, ETL Script, and Implementation Guide
 
 ## **Overview**
 This README provides an in-depth explanation of the data model, ETL scripts, and techniques used to solve Bitso Challenge 2 problem. It includes the rationale behind the modeling decisions, detailed descriptions of the tables, the data pipeline for generating them, and a proposal for ingesting the data into a Data Lake using PySpark.
