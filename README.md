@@ -59,17 +59,6 @@ The model comprises both **fact tables** and **dimension tables**:
      - `currency_id` (nullable FK to `DimCurrencies`)
    - **Purpose**: Supports queries about active users and cross-event analysis.
 
-4. **FactStaking**:
-   - Tracks staking activities.
-   - **Columns**:
-     - `staking_id`
-     - `user_id` (FK to `DimUsers`)
-     - `stake_date` (FK to `DimDate`)
-     - `amount_staked`
-     - `reward_generated`
-     - `product_id` (FK to `DimProducts`)
-   - **Purpose**: Enables staking-specific queries like total rewards.
-
 #### **Dimension Tables**
 1. **DimUsers**:
    - Describes users.
@@ -103,7 +92,7 @@ The model comprises both **fact tables** and **dimension tables**:
    - **Purpose**: Enables currency-specific filtering and aggregation.
 
 5. **DimProducts**:
-   - Catalogs products (e.g., staking, rewards).
+   - Catalogs products
    - **Columns**:
      - `product_id`
      - `product_name`
