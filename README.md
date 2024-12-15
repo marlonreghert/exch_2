@@ -6,7 +6,6 @@ This README provides an in-depth explanation of the data model, ETL scripts, and
 
 ## **Data Model**
 The data model is designed to address Bitso’s evolving requirements, including:
-- **New products** (e.g., staking, lending, rewards).
 - **Geographic expansion** (e.g., new jurisdictions and regulations).
 - **Non-peer-to-peer transactions** (e.g., internal activities like earning rewards).
 
