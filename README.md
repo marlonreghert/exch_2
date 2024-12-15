@@ -144,43 +144,7 @@ The ETL pipeline is implemented using **PySpark**, leveraging distributed proces
 
 ---
 
-## **Technologies for Data Ingestion**
-### **Data Lake Approach**:
-1. **Storage**:
-   - Use AWS S3, Azure Data Lake, or Google Cloud Storage for raw, processed, and enriched data.
-2. **Format**:
-   - Store raw data in CSV/JSON and processed data in Parquet/ORC for optimized query performance.
-3. **Query Engine**:
-   - Use Presto or AWS Athena for interactive SQL queries over the lake.
-4. **ETL Orchestration**:
-   - Use Apache Airflow or Spark Structured Streaming for automated workflows.
-
-### **Data Warehouse Approach**:
-1. **Database**:
-   - Use Snowflake, BigQuery, or Amazon Redshift for analytical workloads.
-2. **Schema Design**:
-   - Partition fact tables by date or jurisdiction for performance.
-   - Index high-query columns (e.g., `user_id`, `date_id`).
-3. **Pipeline**:
-   - Write PySpark output directly to the DWH using JDBC connectors.
-   - Schedule periodic updates using Apache Airflow.
-
----
-
 ## **Pros and Cons of the Approach**
-### **Pros**:
-- **Scalability**: Supports new products, regions, and transaction types.
-- **Flexibility**: Modular design allows incremental additions without disrupting existing structures.
-- **Performance**: Optimized for analytical queries with pre-aggregated fact tables.
-- **Historical Tracking**: Supports tracking temporal changes (e.g., user levels).
-
-### **Cons**:
-- **Complexity**: Requires careful maintenance of bridge tables and foreign key mappings.
-- **ETL Overhead**: Distributed pipelines add computational and operational costs.
-- **Storage Requirements**: Denormalized fact tables increase storage usage.
-
----
-## **Running the script**
 ### **Pros**:
 - **Scalability**: Supports new products, regions, and transaction types.
 - **Flexibility**: Modular design allows incremental additions without disrupting existing structures.
@@ -248,28 +212,25 @@ Here’s a small section you can add to your README:
    - /resources: Input data (Sample -> 1% of data, Full: 100% of data)
    *ps: The output was too big so a link with the data will be sent
 
-2. **Install Dependencies**  
-   Install the required Python packages listed in `requirements.txt`:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Script**  
-   Set the `PYTHONPATH` to the project root and run the script:
-
-   ```bash
-   export PYTHONPATH=.
-   python3 -m core.main
-   ```
-
-   This will execute the main script located in the `core` module.
-
-4. **Deactivate the Virtual Environment**  
-   When you're done, deactivate the virtual environment:
-
-   ```bash
-   deactivate
-   ```
-
 ---
+
+## **Lookin ahead: Technologies for Data Ingestion**
+### **Data Lake Approach**:
+1. **Storage**:
+   - Use AWS S3, Azure Data Lake, or Google Cloud Storage for raw, processed, and enriched data.
+2. **Format**:
+   - Store raw data in CSV/JSON and processed data in Parquet/ORC for optimized query performance.
+3. **Query Engine**:
+   - Use Presto or AWS Athena for interactive SQL queries over the lake.
+4. **ETL Orchestration**:
+   - Use Apache Airflow or Spark Structured Streaming for automated workflows.
+
+### **Data Warehouse Approach**:
+1. **Database**:
+   - Use Snowflake, BigQuery, or Amazon Redshift for analytical workloads.
+2. **Schema Design**:
+   - Partition fact tables by date or jurisdiction for performance.
+   - Index high-query columns (e.g., `user_id`, `date_id`).
+3. **Pipeline**:
+   - Write PySpark output directly to the DWH using JDBC connectors.
+   - Schedule periodic updates using Apache Airflow.
