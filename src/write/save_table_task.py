@@ -1,7 +1,7 @@
 import logging
 import uuid
 from pyspark.sql import DataFrame
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class SaveTableTask(SparkTask):
     def __init__(self, spark, table, output_path, table_name, format="csv", coalesce=True):

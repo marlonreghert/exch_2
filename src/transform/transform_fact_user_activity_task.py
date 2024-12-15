@@ -1,5 +1,5 @@
 from pyspark.sql.functions import col, lit, monotonically_increasing_id
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class FactUserActivityTransformerTask(SparkTask):
     def __init__(self, spark, deposits, withdrawals, events):

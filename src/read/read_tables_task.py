@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class ReadTablesTask(SparkTask):
     def __init__(self, spark, file_paths):

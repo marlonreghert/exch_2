@@ -1,5 +1,5 @@
 from pyspark.sql.functions import col, monotonically_increasing_id
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class FactWithdrawalsTransformerTask(SparkTask):
     def __init__(self, spark, withdrawals):

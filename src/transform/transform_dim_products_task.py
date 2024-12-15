@@ -1,5 +1,5 @@
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class DimProductsTransformerTask(SparkTask):
     def __init__(self, spark):

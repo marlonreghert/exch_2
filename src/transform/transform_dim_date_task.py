@@ -1,5 +1,5 @@
 from pyspark.sql.functions import col, lit, to_date, date_add, year, month, dayofmonth, dayofweek
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class DimDateTransformerTask(SparkTask):
     def __init__(self, spark):

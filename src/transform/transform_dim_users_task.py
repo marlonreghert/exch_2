@@ -1,4 +1,4 @@
-from core.base.spark_task import SparkTask
+from src.base.spark_task import SparkTask
 
 class DimUsersTransformerTask(SparkTask):
     def __init__(self, spark, users):

@@ -158,10 +158,6 @@ The ETL pipeline is implemented using **PySpark**, leveraging distributed proces
 
 ---
 
-Here’s a small section you can add to your README:
-
----
-
 ### **How to Run the Script**
 
 1. **Create and Activate a Virtual Environment**  
@@ -184,24 +180,30 @@ Here’s a small section you can add to your README:
 
    ```bash
    export PYTHONPATH=.
-   python3 -m core.main
+   python3 -m src.main
    ```
 
-   This will execute the main script located in the `core` module.
+   This will execute the main script located in the `src` module
+   which orchestrates the Data Pipeline.
 
-4. **Deactivate the Virtual Environment**  
+5. **Running unit testst**  
+
+   ``` PYTHONPATH=. python -m unittest discover -s tests -p "*.py"
+   ```
+
+5. **Deactivate the Virtual Environment**  
    When you're done, deactivate the virtual environment:
 
    ```bash
    deactivate
-   ```
+   ```   
 
 ---
 
 
 ### **Project structure**
 
-1. **/core**  
+1. **/src**  
    - main.py: Orchestrates the pipeline
    - /base: Base Spark task holding basic logic
    - /read: Read-related tasks
