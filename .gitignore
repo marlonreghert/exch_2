@@ -1,0 +1,31 @@
+# Python files
+*.pyc
+__pycache__/
+
+# PySpark logs
+spark-warehouse/
+metastore_db/
+*.crc
+*.log
+
+temp/
+output/
+resources/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+# Python virtual environments
+venv/
+.env/
+etl_env/
+.etl_env
