@@ -10,14 +10,13 @@ The data model is designed to address Bitso’s evolving requirements, including
 - **Non-peer-to-peer transactions** (e.g., internal activities like earning rewards).
 
 ### **Modeling Techniques**
-We employed a **hybrid schema** that combines **star schema** principles with elements of **snowflake schema** and bridge tables for flexibility and scalability.
+We employed a **star schema** for flexibility and scalability.
 
 #### **Why This Approach?**
 1. **Star Schema Elements**:
    - Simplifies analytical queries with denormalized fact tables linked to descriptive dimension tables.
    - Fact tables (e.g., deposits, withdrawals, user activities) are optimized for performance.
-2. **Snowflake Schema Elements**:
-   - Normalized dimensions (e.g., `DimProducts`, `DimJurisdictions`, `DimUserLevels`) reduce redundancy.
+   - Dimensions (e.g., `DimProducts`, `DimJurisdictions`, `DimUserLevels`) reduce redundancy.
    - Historical tracking for changing attributes like user levels is easier with normalized tables.
 3. **Bridge Tables**:
    - The `ProductJurisdiction` table resolves the many-to-many relationship between products and jurisdictions.
@@ -64,9 +63,6 @@ The model comprises both **fact tables** and **dimension tables**:
    - Describes users.
    - **Columns**:
      - `user_id`
-     - `registration_date` (FK to `DimDate`)
-     - `jurisdiction`
-   - **Purpose**: Supports user segmentation and jurisdiction analysis.
 
 2. **DimUserLevels**:
    - Tracks changes in user levels over time.
